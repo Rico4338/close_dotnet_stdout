@@ -1,0 +1,14 @@
+version: '3'
+services:
+  demo_dotnet:
+    container_name: "demo_dotnet"
+    restart: always
+    network_mode: "host"
+    volumes:
+      - ./:/app:rw
+    image: dotnet-5.0-run
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 1000M
